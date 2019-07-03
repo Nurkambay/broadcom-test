@@ -1,0 +1,8 @@
+broadcom\rest\BroadcomConfig.class
+broadcom\rest\domain\form\DepositForm.class
+broadcom\rest\service\ServiceException.class
+broadcom\rest\domain\resource\VendingItemResource.class
+broadcom\rest\BroadcomApplication.class
+broadcom\rest\controller\VendingItemController.class
+broadcom\rest\domain\resource\DepositStatusResource.class
+broadcom\rest\service\VendingItemService.class

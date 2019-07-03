@@ -1,0 +1,3 @@
+broadcom\entities\VendingItemRepository.class
+broadcom\entities\VendingItemEntity.class
+broadcom\entities\VendingItemFactory.class
