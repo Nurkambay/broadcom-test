@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Api Service represents a repository implementation depended adapter to VendingMachine class
+ * Following repository implementation assume thread safety for api calls
+ * For database implementation ApiService should use @Transactional instead of @Synchronized
+ */
 @Service
 @RequiredArgsConstructor
 public class ApiService {

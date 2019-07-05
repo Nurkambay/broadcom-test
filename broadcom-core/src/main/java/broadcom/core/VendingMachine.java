@@ -52,9 +52,7 @@ public class VendingMachine {
                 .type(itemType)
                 .build();
 
-        return Optional.ofNullable(entity).map(e -> itemRepository.save(entity))
-                .map(VendingItem::getId)
-                .orElseThrow(() -> new CoreException("Cannot deposit item with unknown type: " + typeName));
+        return itemRepository.save(entity).getId();
     }
 
     /**
