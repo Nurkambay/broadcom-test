@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Vending machine item
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

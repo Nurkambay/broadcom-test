@@ -4,15 +4,18 @@ import broadcom.core.model.VendingItem;
 
 import java.util.List;
 
+/**
+ * Vending Machine items repository
+ */
 public interface VendingItemRepository {
     List<VendingItem> findAll();
 
     VendingItem save(VendingItem entity);
 
-    VendingItem findFirstByType(String type);
+    VendingItem findFirstByTypeName(String typeName);
 
     boolean deleteById(int id);
 
-    long countByType(String type);
+    long countByTypeName(String typeName);
 
 }

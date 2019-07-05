@@ -1,12 +1,10 @@
 package broadcom.storage;
 
-import broadcom.core.model.ItemType;
 import broadcom.core.model.VendingItem;
 import broadcom.core.repository.VendingItemRepository;
 import lombok.Synchronized;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -14,19 +12,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 class VendingItemRepositoryImpl implements VendingItemRepository {
 
     private static AtomicInteger idQueue = new AtomicInteger();
-    private static Map<Integer, VendingItem> itemMap;
+    private static Map<Integer, VendingItem> itemMap = new HashMap<>();
 
-    @PostConstruct
-    public void init() {
-        itemMap = new HashMap<>();
-
-        for (ItemType itemType : ItemTypeRepositoryImpl.itemTypes.values()) {
-            for (int i = 0; i < 10; i++) {
-                int id = idQueue.incrementAndGet();
-                itemMap.put(id, new VendingItem(id, itemType));
-            }
-        }
-    }
+//    @PostConstruct
+//    public void init() {
+//        for (ItemType itemType : ItemTypeRepositoryImpl.itemTypes.values()) {
+//            for (int i = 0; i < 10; i++) {
+//                int id = idQueue.incrementAndGet();
+//                itemMap.put(id, new VendingItem(id, itemType));
+//            }
+//        }
+//    }
 
     @Override
     @Synchronized("itemMap")
@@ -48,9 +44,9 @@ class VendingItemRepositoryImpl implements VendingItemRepository {
 
     @Override
     @Synchronized("itemMap")
-    public VendingItem findFirstByType(String type) {
+    public VendingItem findFirstByTypeName(String typeName) {
         return itemMap.values().stream()
-                .filter(i -> i.getType().getName().equals(type))
+                .filter(i -> i.getType().getName().equals(typeName))
                 .findFirst()
                 .orElse(null);
     }
@@ -63,9 +59,9 @@ class VendingItemRepositoryImpl implements VendingItemRepository {
 
     @Override
     @Synchronized("itemMap")
-    public long countByType(String type) {
+    public long countByTypeName(String typeName) {
         return itemMap.values().stream()
-                .filter(i -> i.getType().getName().equals(type))
+                .filter(i -> i.getType().getName().equals(typeName))
                 .count();
     }
 }
