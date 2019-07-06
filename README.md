@@ -1,6 +1,6 @@
-# Project description
+# broadcom-test project description
 
-broadcom-test application is java spring boot project with maven build script
+broadcom-test project is java spring boot REST API application with maven build script.
 This application represents vending machine emulation.
 
 ## 1. Project structure
@@ -13,17 +13,21 @@ Project contain 3 modules
 ### 1.1. broadcom-core
 Main core classes with model, repository and business logic layers.
 
-- Core is not depended on data persistence
-- Core is not depended on data visualization and population
-- Business logic is not thread-safe because responsibility on this lays on core's consumers 
+- Core is not dependent on data persistence
+- Core is not dependent on data visualization and population
+- Business logic is not thread-safe or transactional because responsibility on this lays on core's consumers and can depend on repository implementation 
 
 ### 1.2. broadcom-storage
-Module with repository in-memory storage implementation.
-- In current implementation contain only in-memory storage for easy deploy purposes.
-- You can easily autowire repository beans with Hibernate JPA, DynamoDB, no-sql, TCP/IP or other implementation.
+Module contains in-memory repositories implementation.
+
+- Current implementation contains only in-memory storage for easy deploy.
+- You can easily autowire repository beans with Hibernate JPA, DynamoDB, no-sql, TCP/IP or other implementation to change persistence behavior.
 
 ### 1.3. broadcom-rest
-This module contains REST application. It depends on core and storage modules.
+This module represents REST API application. It has dependencies on core and storage modules.
+
+- Does not contain business logic
+- Does not contain storage implementation
 
 #### How to switch to Database implementation 
 - Switch dependency from broadcom-storage to another storage implementation.
