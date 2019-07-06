@@ -8,7 +8,8 @@ Project contain 3 modules
 - broadcom-core
 - broadcom-storage
 - broadcom-rest
- 
+
+![Project dependencies](https://github.com/Nurkambay/broadcom-test/blob/master/modules.png) 
 
 ### 1.1. broadcom-core
 Main core classes with model, repository and business logic layers.
