@@ -13,7 +13,7 @@ import java.util.Optional;
 
 /**
  * Main core class with business logic of vending machine
- * Class is not thread safe
+ * Class is not thread-safe
  */
 @Service
 @RequiredArgsConstructor
