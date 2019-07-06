@@ -36,6 +36,6 @@ This module represents REST API application. It has dependencies on core and sto
 
 ## 2. How to build and run
 - Install maven
-- type "maven clean install"
+- type "mvn clean install"
 - type "java -jar ./broadcom-rest/target/broadcom.jar"
 - open url http://localhost:5000
