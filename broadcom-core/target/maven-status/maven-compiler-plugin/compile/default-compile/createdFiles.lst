@@ -1,9 +1,0 @@
-broadcom\core\model\VendingItem$VendingItemBuilder.class
-broadcom\core\repository\MachinePropertiesRepository.class
-broadcom\core\CoreException.class
-broadcom\core\model\ItemType.class
-broadcom\core\VendingMachine.class
-broadcom\core\repository\ItemTypeRepository.class
-broadcom\core\model\MachineProperties.class
-broadcom\core\repository\VendingItemRepository.class
-broadcom\core\model\VendingItem.class
